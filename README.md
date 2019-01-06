@@ -1,5 +1,8 @@
 # Spring Boot - Comexport Challenge
 
+## Installing
+
+Run `mvn install`.
 
 ## Run App
 
