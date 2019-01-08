@@ -16,7 +16,6 @@ public class AccountingEntryService {
 
     private List<AccountingEntry> accountingEntries = new ArrayList<>();
 
-
     public String save(AccountingEntryDto accountingEntryDto) {
         AccountingEntry accountingEntry = generateUUID(AccountingEntry.parseFromDto(accountingEntryDto));
 
@@ -52,6 +51,10 @@ public class AccountingEntryService {
             return getStatsByAccountNumber(accountNumber);
         }
         return StatsDto.getStats(this.accountingEntries);
+    }
+
+    public void cleanAccountingEntries() {
+        this.accountingEntries = new ArrayList<>();
     }
 
     private StatsDto getStatsByAccountNumber(Long accountNumber) {

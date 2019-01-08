@@ -19,22 +19,22 @@ public class AccountingEntryController {
 
     @PostMapping()
     @ResponseStatus(HttpStatus.CREATED)
-    String newAccountingEntry(@RequestBody AccountingEntryDto accountingEntryDto) {
+    public String newAccountingEntry(@RequestBody AccountingEntryDto accountingEntryDto) {
       return accountingEntryService.save(accountingEntryDto);
     }
 
     @GetMapping()
-    List<AccountingEntryDto> getAccount(@RequestParam(value="contaContabil") Long contaContabil) {
+    public List<AccountingEntryDto> getAccount(@RequestParam(value="contaContabil") Long contaContabil) {
         return accountingEntryService.findAccounts(contaContabil);
     }
 
     @GetMapping("{id}")
-    AccountingEntryDto getAccountingEntry(@PathVariable String id) {
+    public AccountingEntryDto getAccountingEntry(@PathVariable String id) {
         return accountingEntryService.findAccountingEntry(id);
     }
 
     @GetMapping("/_stats")
-    StatsDto getStats(@RequestParam(value="contaContabil", required = false) Long contaContabil) {
+    public StatsDto getStats(@RequestParam(value="contaContabil", required = false) Long contaContabil) {
         return accountingEntryService.getStats(contaContabil);
     }
 }
