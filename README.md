@@ -27,8 +27,26 @@ Enjoy!!
 
 ## APIs
 
+| URL                                                        | Method    | 
+| :--------------------------------------------------------- | ---------:|
+|  /lancamentos-contabeis                                    | POST      |
+|  /lancamentos-contabeis/{id}                               | GET       |
+|  /lancamentos-contabeis/?contaContabil={numero}            | GET       |
+|  /lancamentos-contabeis/_stats/                            | GET       |
+|  /lancamentos-contabeis/_stats/?contaContabil={numero}     | GET       |
 
-| URL                          | Method    | 
-| :--------------------------- | ---------:|
-|  /lancamentos-contabeis      | POST      |
-|  /lancamentos-contabeis/{id} | GET       |
+
+## Payload - Example
+
+`/lancamentos-contabeis` - POST
+
+~~~~
+{	
+	"contaContabil": {
+		"numero": 1002,
+		"descricao": "Conta 1"
+	},
+	"data": "2018-01-01",
+	"valor": "50"
+}
+~~~~
